@@ -112,7 +112,7 @@
 		<!-- #masthead -->
 	
 		<form   id="curtainform">
-			<table>
+			<table style="width:95%;margin-left:20px" >
 				<tr>
 					<td>
 						<input style="width:25%" type="number" name="wwidth" id="wwidth" />&nbspانچ
@@ -129,9 +129,6 @@
 				<tr>
 					<td>
 						<input type="number" name="topbottonmargin"  id="topbottonmargin" />&nbspانچ
-					</td>
-					
-					<td>
 						<label style="font-size:18px;margin-right:30px;float:right;font-weight:bold" for="wwidth"> &nbspاپر نیچے کا بارڈر </label>
 					</td>
 					
@@ -144,16 +141,12 @@
 						  <option value="108">108</option>
 						</select>
 						&nbspانچ
-					</td>
-					<td>
 						<label style="font-size:18px;margin-right:30px;float:right;font-weight:bold" for="wwidth"> &nbsp کپڑے کا عرض</label>
 					</td>
 				</tr>
 				<tr id="widthmodediv" style="display:none">
 					<td>
 						<input name="widthmode" id="widthmode" type="checkbox">
-					</td>
-					<td>
 						<label style="font-size:18px;margin-right:30px;float:right;font-weight:bold" for="wwidth"> عرض بطور لمبائ </label>
 					</td>
 				</tr>
@@ -165,8 +158,6 @@
 						  <option value="108">108</option>
 						</select>
 						&nbspانچ
-					</td>
-					<td>
 						<label style="font-size:18px;margin-right:30px;float:right;font-weight:bold" for="wwidth"> &nbsp لائننگ</label>
 					</td>
 				</tr>
@@ -175,8 +166,6 @@
 					<td>
 						<input type="number" id="fprice" name="fprice">
 						&nbspگز
-					</td>
-					<td>
 						<label style="font-size:18px;margin-right:30px;float:right;font-weight:bold" for="wwidth"> کپڑے کا ریٹ </label>
 					</td>
 				</tr>
@@ -184,8 +173,6 @@
 					<td>
 						<input type="number" id="lprice" name="lprice">
 						&nbspگز
-					</td>
-					<td>
 						<label style="font-size:18px;margin-right:30px;float:right;font-weight:bold" for="wwidth"> لائئننگ کا ریٹ </label>
 					</td>
 				</tr>
@@ -223,11 +210,6 @@ var btn = document.getElementById("myBtn");
 
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
-
-// When the user clicks on the button, open the modal
-btn.onclick = function() {
-  modal.style.display = "block";
-}
 
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() {
