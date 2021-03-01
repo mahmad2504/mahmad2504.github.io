@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1,text/html; charset=utf-8">
+
+<title>Shamo Jee | Shamo Jee Fabric Size Calculator</title>
+<link rel='stylesheet' href='css/woocommerce-layout.css' type='text/css' media='all'/>
+<link rel='stylesheet' href='css/woocommerce-smallscreen.css' type='text/css' media='only screen and (max-width: 768px)'/>
+<link rel='stylesheet' href='css/woocommerce.css' type='text/css' media='all'/>
+<link rel='stylesheet' href='css/font-awesome.min.css' type='text/css' media='all'/>
+<link rel='stylesheet' href='style.css' type='text/css' media='all'/>
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Oswald:400,500,700%7CRoboto:400,500,700%7CHerr+Von+Muellerhoff:400,500,700%7CQuattrocento+Sans:400,500,700' type='text/css' media='all'/>
+<link rel='stylesheet' href='css/easy-responsive-shortcodes.css' type='text/css' media='all'/>
+<style>
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 2% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+</style>
+</head>
+<body class="home page page-template page-template-template-portfolio page-template-template-portfolio-php">
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+  <!-- Modal content -->
+  <div style="font-size:20px;color:black;font-weight:bold" class="modal-content">
+    <span class="close">&times;</span><br>
+		<div style="text-align: center;">
+			<span style="display: inline-block;">پردے کا کپڑا</span>
+		</div>
+		
+		<span style="float:left;" id="curtain_height"></span>
+		<span style="float:right;">پینل لمبائ</span>
+		<br>
+		<span style="float:left;" id="no_of_panels"></span>
+		<span style="float:right;">پینل تعداد</span>
+		<br>
+		<span style="float:left;" id="total_fabric"></span>
+		<span style="float:right;">پردے کا کپڑا</span>
+		<br>
+		<span style="float:left;" id="fabric_amount"></span>
+		<span style="float:right;"> کپڑے کی قیمت</span>
+		<br>
+		<div style="text-align: center;">
+			<span style="display: inline-block;"> لائیننگ </span>
+		</div>
+		
+		
+		<span style="float:left;" id="lineing_height"></span>
+		<span style="float:right;"> پینل لمبائ</span>
+		<br>
+		<span style="float:left;" id="lineing_no_of_panels"></span>
+		<span style="float:right;">پینل تعداد</span>
+		<br>
+		<span style="float:left;" id="lineing_total_fabric"></span>
+		<span style="float:right;">لائیننگ کا کپڑا</span>
+		<br>
+		<span style="float:left;" id="lineing_amount"></span>
+		<span style="float:right;">لائیننگ کی قیمت</span>
+		<br>
+		<br>
+		
+		
+  </div>
+</div>
+
+<button id="myBtn">Open Modal</button>
+
+<div id="page">
+	<div class="container">
+		<header id="masthead" class="site-header">
+		<div class="site-branding">
+			<img style="width:200px;margin-left:-50px;" src="images/window-curtains-labeled.png"></img><br>
+			<img ><span style="margin-left:-50px;font-size:30px;color:black;font-weight:bold">پردہ سائز کیلکولیٹر</span></img>
+			
+		</div>
+		</header>
+		<!-- #masthead -->
+		<div id="content" class="site-content">
+			<div id="primary" class="content-area column full">
+				<main id="main" class="site-main">
+				<article id="post-39" class="post-39 page type-page status-publish hentry">
+				<header class="entry-header">
+				</header>
+				<!-- .entry-header -->
+				<div class="entry-content">
+					<div class="wpcmsdev-columns">
+						<div class="column2">
+							<h4></h4>				
+						
+							<form class="wpcf4"  id="curtainform">
+								<table style="width:90%;margin-left:20px">
+									
+									<tr>
+										<td>
+											<input type="number" name="wwidth" id="wwidth" />&nbspانچ
+										</td>
+										
+										<td>
+											<label style="font-size:18px;margin-right:30px;float:right;font-weight:bold" for="wwidth"> &nbsp(A)کھڑکی کی چوڑائ</label>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<input  type="number" name="wheight" id="wheight" />&nbspانچ
+										</td>
+										
+										<td>
+											<label style="font-size:18px;margin-right:30px;float:right;font-weight:bold" for="wwidth"> &nbsp(B)کھڑکی کی لمبائ </label>
+										</td>
+										
+									</tr>
+									<tr>
+										<td>
+											<input type="number" name="topbottonmargin"  id="topbottonmargin" />&nbspانچ
+										</td>
+										
+										<td>
+											<label style="font-size:18px;margin-right:30px;float:right;font-weight:bold" for="wwidth"> &nbspاپر نیچے کا بارڈر </label>
+										</td>
+										
+									</tr>
+									<tr>
+										<td>
+											<select name="fwidth" style="width:35%" id="fwidth" name="fwidth">
+											  <option value="48">48</option>
+											  <option value="54">54</option>
+											  <option value="108">108</option>
+											</select>
+											&nbspانچ
+										</td>
+										<td>
+											<label style="font-size:18px;margin-right:30px;float:right;font-weight:bold" for="wwidth"> &nbsp کپڑے کا عرض</label>
+										</td>
+									</tr>
+									<tr id="widthmodediv" style="display:none">
+										<td>
+											<input name="widthmode" id="widthmode" type="checkbox">
+										</td>
+										<td>
+											<label style="font-size:18px;margin-right:30px;float:right;font-weight:bold" for="wwidth"> عرض بطور لمبائ </label>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<select  style="width:35%" id="lwidth" name="lwidth">
+											  <option value=""></option>
+											   <option value="98">98</option>
+											  <option value="108">108</option>
+											</select>
+											&nbspانچ
+										</td>
+										<td>
+											<label style="font-size:18px;margin-right:30px;float:right;font-weight:bold" for="wwidth"> &nbsp لائننگ</label>
+										</td>
+									</tr>
+									
+									<tr>
+										<td>
+											<input type="number" id="fprice" name="fprice">
+											&nbspگز
+										</td>
+										<td>
+											<label style="font-size:18px;margin-right:30px;float:right;font-weight:bold" for="wwidth"> کپڑے کا ریٹ </label>
+										</td>
+									</tr>
+									<tr id="lpricediv" style="display:none">
+										<td>
+											<input type="number" id="lprice" name="lprice">
+											&nbspگز
+										</td>
+										<td>
+											<label style="font-size:18px;margin-right:30px;float:right;font-weight:bold" for="wwidth"> لائئننگ کا ریٹ </label>
+										</td>
+									</tr>
+								</table>
+								<button type="submit" class="btn btn-success">Submit <span class="fa fa-arrow-right"></span></button>
+
+							</form>
+							<div class="done">								
+								Your message has been sent. Thank you!
+							</div>
+							
+						</div>
+						
+					</div>
+				</div>
+				<!-- .entry-content -->
+				</article>
+				</main>
+				<!-- #main -->
+			</div>
+			<!-- #primary -->
+		</div>
+		<!-- #content -->
+	</div>
+	<!-- .container -->
+	<footer id="colophon" class="site-footer">
+	<div class="container">
+		<div class="site-info">
+			<h1 style="font-family: 'Herr Von Muellerhoff';color: #ccc;font-weight:300;text-align: center;margin-bottom:0;margin-top:0;line-height:1.4;font-size: 46px;">Shamo Jee</h1>
+			<a target="blank" href="https://www.wowthemes.net/">&copy; Shamo Jee - Furniture, Fabrics and Carpets</a>
+		</div>
+	</div>
+	</footer>
+	<a href="#top" class="smoothup" title="Back to top"><span class="genericon genericon-collapse"></span></a>
+</div>
+<!-- #page -->
+<script
+  src="https://code.jquery.com/jquery-3.5.1.min.js"
+  integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+  crossorigin="anonymous"></script>
+
+</body>
+
+<script>
+
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on the button, open the modal
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+
+function AdjustClothHeight(cheight)
+{
+	var cheight = cheight.toString();
+	var cheight_str = cheight.toString();
+	var parts = cheight.split(".");
+	if(parts.length < 2)
+		return parseFloat(cheight);
+	var dec = parts[1];
+	var intpart = parseInt(parts[0]);
+	dec = dec.substring(0, 2);
+	if(dec  > 0 && dec  <= 25)
+		dec = 25;
+	else if(dec  > 25 && dec  <= 50)
+		dec = 50;
+	else if(dec  > 50 && dec  <= 75)
+		dec = 75;
+	else
+	{
+		intpart = intpart + 1;
+		dec = 0;
+	}
+	cheight = intpart +"."+dec;
+	cheight = parseFloat(cheight);
+	console.log(cheight_str+" adjusted to "+cheight);
+	return cheight;
+}
+function Trunc(cheight)
+{
+	var cheight = cheight.toString();
+	var cheight_str = cheight.toString();
+	var parts = cheight.split(".");
+	if(parts.length < 2)
+		return parseFloat(cheight);
+		
+	var dec = parts[1];
+	var intpart = parseInt(parts[0]);
+	dec = dec.substring(0, 2);
+	
+	cheight = intpart +"."+dec;
+	cheight = parseFloat(cheight);
+	//console.log(cheight_str+" adjusted to "+cheight);
+	return cheight;
+}
+function ComputeResult(wwidth,wheight,fwidth,lwidth,topbottonmargin,widthmode,fprice,lprice)
+{
+	if(widthmode == undefined)
+	{
+		var cheight = (wheight + topbottonmargin)/36;
+		
+		//cheight = AdjustClothHeight(cheight);
+		var no_of_panels =  Math.round(((wwidth + 12)*3)/fwidth);
+		var flength = no_of_panels * cheight;
+		flength = AdjustClothHeight(flength);
+		
+		//console.log(widthmode);
+		
+	} //120 ,96 , 12 ,54
+	else
+	{
+		var cheight = (wheight + topbottonmargin);
+		if(cheight <= fwidth)
+		{
+			var no_of_panels =  1;
+			cheight = cheight/36;
+			//cheight = AdjustClothHeight(cheight);
+			var flength =  Math.round(((wwidth + 12)*3)/36);
+			flength = AdjustClothHeight(flength);
+		}
+		else
+		{
+		    console.log("Error");
+			return;
+			//var cheight = (wheight + topbottonmargin)/36;
+			//cheight = AdjustClothHeight(cheight);
+			//var no_of_panels =  Math.round(((wwidth + 12)*3)/fwidth);
+			//var flength = no_of_panels * cheight;
+		}
+		
+	}
+	
+	if(lwidth > 0)
+	{
+		var lcheight = (wheight + topbottonmargin);
+		if(lcheight <= lwidth)
+		{
+			var l_no_of_panels =  1;
+			lcheight = lcheight/36;
+			//cheight = AdjustClothHeight(cheight);
+			var llength =  Math.round(((wwidth + 12)*3)/36);
+			llength = AdjustClothHeight(llength);
+		}
+		else
+		{
+			var lcheight = (wheight + topbottonmargin)/36;
+			//cheight = AdjustClothHeight(cheight);
+			var l_no_of_panels =  Math.round(((wwidth + 12)*3)/lwidth);
+			var llength = l_no_of_panels * lcheight;
+			llength = AdjustClothHeight(llength);
+			
+			
+		}
+		console.log(' Lineing ');
+		console.log('no_of_panels = '+l_no_of_panels);
+		console.log('Total Lining Fabric = '+llength+' yards');
+		if(lprice >  0)
+		{
+			console.log('Total Price = '+(lprice*llength)+' Rs');
+			$('#lineing_amount').text((lprice*llength)+' روپے');
+		}
+		$('#lineing_height').text(Trunc(lcheight)+' گز');
+		$('#lineing_no_of_panels').text(l_no_of_panels);
+		$('#lineing_total_fabric').text(llength+' گز');
+		
+		
+	}
+	console.log('Curtain height = '+cheight+' yard');
+	console.log('no_of_panels = '+no_of_panels);
+	console.log('Total Fabric = '+flength+' yards');
+	if(fprice >  0)
+	{
+		console.log('Total Price = '+fprice*flength+' Rs');
+		$('#fabric_amount').text((fprice*flength)+' روپے');
+		
+	}
+	$('#curtain_height').text(Trunc(cheight)+' گز');
+	$('#no_of_panels').text(no_of_panels);
+	$('#total_fabric').text(flength+' گز');
+	modal.style.display = "block";
+}	
+		
+$(document).ready(function() 
+{
+	$('#curtainform').submit(function(event) {
+		//console.log($("#curtainform").serialize());
+		//console.log($("#curtainform"));
+		var fields = $("#curtainform").serialize().split("&");
+		for(var i=0;i<fields.length;i++)
+		{
+			var key = fields[i].split("=")[0];
+			var value = fields[i].split("=")[1];
+			fields[key]=value;
+			
+		}
+		var fprice = parseInt(fields['fprice']);
+		var fwidth = parseInt(fields['fwidth']); 
+		var lprice = parseInt(fields['lprice']);
+		var lwidth = parseInt(fields['lwidth']);
+		var topbottonmargin = parseInt(fields['topbottonmargin']);
+		var wheight = parseInt(fields['wheight']);
+		var widthmode = fields['widthmode'];
+		var wwidth = parseInt(fields['wwidth']);
+		
+		if(wwidth <= 0)
+		{
+			$('#wwidth').css('border-color','red');
+			event.preventDefault();
+			return;
+		}
+		else
+		{
+			$('#wwidth').css('border-color','green');
+			
+		}
+		
+		if(wheight <= 0)
+		{
+			$('#wheight').css('border-color','red');
+			event.preventDefault();
+			return;
+		}
+		else
+		{
+			$('#wheight').css('border-color','green');
+			
+		}
+		
+		if(fwidth <= 0)
+		{
+			$('#fwidth').css('border-color','red');
+			event.preventDefault();
+			return;
+		}
+		else
+		{
+			$('#fwidth').css('border-color','green');
+			
+		}
+		if(topbottonmargin <= 0)
+		{
+			$('#topbottonmargin').css('border-color','red');
+			event.preventDefault();
+			return;
+		}
+		else
+		{
+			$('#topbottonmargin').css('border-color','green');
+			
+		}
+		
+		if(wwidth <= 0)
+		{
+			$('#wwidth').css('border-color','red');
+			event.preventDefault();
+			return;
+		}
+		else
+		{
+			$('#wwidth').css('border-color','green');
+			
+		}
+	
+		if(fprice == '')
+			fprice = 0;
+			
+		if(lprice == '')
+			lprice = 0;
+		if(lwidth == '')
+			lwidth = 0;
+			
+		ComputeResult(wwidth,wheight,fwidth,lwidth,topbottonmargin,widthmode,fprice,lprice);
+		event.preventDefault();
+	});
+	
+	$('#wwidth').change(function()
+	{
+		var wwidth = $('#wwidth').val();
+		
+		if(wwidth <= 0)
+		{
+			$('#wwidth').css('border-color','red');
+		}
+		else
+		{
+			$('#wwidth').css('border-color','green');
+		}
+	});
+	$('#wheight').change(function()
+	{
+		var wheight = $('#wheight').val();
+		
+		if(wheight <= 0)
+		{
+			$('#wheight').css('border-color','red');
+		}
+		else
+		{
+			$('#wheight').css('border-color','green');
+		}
+	});
+	$('#topbottonmargin').change(function()
+	{
+		var topbottonmargin = $('#topbottonmargin').val();
+		if(topbottonmargin <= 0)
+		{
+			$('#topbottonmargin').css('border-color','red');
+		}
+		else
+		{
+			$('#topbottonmargin').css('border-color','green');
+		}
+	});
+	$('#lwidth').change(function(){
+		var lwidth = $( "#lwidth option:selected" ).text();
+		if(lwidth > 0)
+		{
+			$('#lpricediv').show();
+		}
+		else
+			$('#lpricediv').hide();
+		
+	})
+	$('#fwidth').change(function(){
+	    var fwidth = $( "#fwidth option:selected" ).text();
+		if(fwidth > 54)
+		{
+			$('#widthmodediv').show();
+		}
+		else
+		{
+			$('#widthmodediv').hide();
+			$('#widthmode').prop('checked', false);
+		}
+		return 0;
+		//console.log($( "#fwidth option:selected" ).text());
+	});
+    console.log('ffff');
+});
+</script>
+
+</html>
