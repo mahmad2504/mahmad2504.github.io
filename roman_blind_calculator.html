@@ -52,7 +52,14 @@
   cursor: pointer;
 }
 
-
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin:auto;
+  width: 30%;
+  border: 3px solid green; 
+}
 </style>
 </head>
 <body class="home page page-template page-template-template-portfolio page-template-template-portfolio-php">
@@ -97,8 +104,6 @@
   </div>
 </div>
 
-<button id="myBtn">Open Modal</button>
-
 <div id="page">
 	<div class="container">
 		<header id="masthead" class="site-header">
@@ -109,123 +114,76 @@
 		</div>
 		</header>
 		<!-- #masthead -->
-		<div id="content" class="site-content">
-			<div id="primary" class="content-area column full">
-				<main id="main" class="site-main">
-				<article id="post-39" class="post-39 page type-page status-publish hentry">
-				<header class="entry-header">
-				</header>
-				<!-- .entry-header -->
-				<div class="entry-content">
-					<div class="wpcmsdev-columns">
-						<div class="column2">
-							<h4></h4>				
-						
-							<form class="wpcf4"  id="curtainform">
-								<table style="width:90%;margin-left:20px">
-									
-									<tr>
-										<td>
-											<input type="number" name="wwidth" id="wwidth" />&nbspانچ
-										</td>
-										
-										<td>
-											<label style="font-size:18px;margin-right:30px;float:right;font-weight:bold" for="wwidth"> &nbsp(A)کھڑکی کی چوڑائ</label>
-										</td>
-									</tr>
-									<tr>
-										<td>
-											<input  type="number" name="wheight" id="wheight" />&nbspانچ
-										</td>
-										
-										<td>
-											<label style="font-size:18px;margin-right:30px;float:right;font-weight:bold" for="wwidth"> &nbsp(B)کھڑکی کی لمبائ </label>
-										</td>
-										
-									</tr>
-									<tr>
-										<td>
-											<input type="number" name="topbottonmargin"  id="topbottonmargin" />&nbspانچ
-										</td>
-										
-										<td>
-											<label style="font-size:18px;margin-right:30px;float:right;font-weight:bold" for="wwidth"> &nbspاپر نیچے کا بارڈر </label>
-										</td>
-										
-									</tr>
-									<tr>
-										<td>
-											<select name="fwidth" style="width:35%" id="fwidth" name="fwidth">
-											  <option value="48">48</option>
-											  <option value="54">54</option>
-											  <option value="108">108</option>
-											</select>
-											&nbspانچ
-										</td>
-										<td>
-											<label style="font-size:18px;margin-right:30px;float:right;font-weight:bold" for="wwidth"> &nbsp کپڑے کا عرض</label>
-										</td>
-									</tr>
-									<tr id="widthmodediv" style="display:none">
-										<td>
-											<input name="widthmode" id="widthmode" type="checkbox">
-										</td>
-										<td>
-											<label style="font-size:18px;margin-right:30px;float:right;font-weight:bold" for="wwidth"> عرض بطور لمبائ </label>
-										</td>
-									</tr>
-									<tr>
-										<td>
-											<select  style="width:35%" id="lwidth" name="lwidth">
-											  <option value=""></option>
-											   <option value="98">98</option>
-											  <option value="108">108</option>
-											</select>
-											&nbspانچ
-										</td>
-										<td>
-											<label style="font-size:18px;margin-right:30px;float:right;font-weight:bold" for="wwidth"> &nbsp لائننگ</label>
-										</td>
-									</tr>
-									
-									<tr>
-										<td>
-											<input type="number" id="fprice" name="fprice">
-											&nbspگز
-										</td>
-										<td>
-											<label style="font-size:18px;margin-right:30px;float:right;font-weight:bold" for="wwidth"> کپڑے کا ریٹ </label>
-										</td>
-									</tr>
-									<tr id="lpricediv" style="display:none">
-										<td>
-											<input type="number" id="lprice" name="lprice">
-											&nbspگز
-										</td>
-										<td>
-											<label style="font-size:18px;margin-right:30px;float:right;font-weight:bold" for="wwidth"> لائئننگ کا ریٹ </label>
-										</td>
-									</tr>
-								</table>
-								<button type="submit" class="btn btn-success">Submit <span class="fa fa-arrow-right"></span></button>
+		<form id="curtainform">
+			<table style="width:95%;margin-left:20px">
+				
+				<tr>
+					<td>
+						<input style="width:25%" type="number" name="wwidth" id="wwidth" />&nbspانچ
+						<label style="font-size:18px;margin-right:30px;float:right;font-weight:bold" for="wwidth"> &nbsp(A)کھڑکی کی چوڑائ</label>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<input  style="width:25%" type="number" name="wheight" id="wheight" />&nbspانچ
+						<label style="font-size:18px;margin-right:30px;float:right;font-weight:bold" for="wwidth"> &nbsp(B)کھڑکی کی لمبائ </label>
+					</td>
+					
+				</tr>
+				<tr>
+					<td>
+						<input style="width:25%" type="number" name="topbottonmargin"  id="topbottonmargin" />&nbspانچ
+						<label style="font-size:18px;margin-right:30px;float:right;font-weight:bold" for="wwidth"> &nbspاپر نیچے کا بارڈر </label>
+					</td>
+					
+				</tr>
+				<tr>
+					<td>
+						<select name="fwidth" style="width:25%" id="fwidth" name="fwidth">
+						  <option value="48">48</option>
+						  <option value="54">54</option>
+						  <option value="108">108</option>
+						</select>
+						&nbspانچ
+						<label style="font-size:18px;margin-right:30px;float:right;font-weight:bold" for="wwidth"> &nbsp کپڑے کا عرض</label>
+					</td>
+				</tr>
+				<tr id="widthmodediv" style="display:none">
+					<td>
+						<input style="width:25%" name="widthmode" id="widthmode" type="checkbox">
+						<label style="font-size:18px;margin-right:30px;float:right;font-weight:bold" for="wwidth"> عرض بطور لمبائ </label>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<select  style="width:25%" id="lwidth" name="lwidth">
+						  <option value=""></option>
+						   <option value="98">98</option>
+						  <option value="108">108</option>
+						</select>
+						&nbspانچ
+						<label style="font-size:18px;margin-right:30px;float:right;font-weight:bold" for="wwidth"> &nbsp لائننگ</label>
+					</td>
+				</tr>
+				
+				<tr>
+					<td>
+						<input style="width:25%" type="number" id="fprice" name="fprice">
+						&nbspگز
+						<label style="font-size:18px;margin-right:30px;float:right;font-weight:bold" for="wwidth"> کپڑے کا ریٹ </label>
+					</td>
+				</tr>
+				<tr id="lpricediv" style="display:none">
+					<td>
+						<input style="width:25%" type="number" id="lprice" name="lprice">
+						&nbspگز
+						<label style="font-size:18px;margin-right:30px;float:right;font-weight:bold" for="wwidth"> لائئننگ کا ریٹ </label>
+					</td>
+				</tr>
+			</table>
+			<button class="center" type="submit" class="btn btn-success">Submit</button><br>
 
-							</form>
-							<div class="done">								
-								Your message has been sent. Thank you!
-							</div>
-							
-						</div>
-						
-					</div>
-				</div>
-				<!-- .entry-content -->
-				</article>
-				</main>
-				<!-- #main -->
-			</div>
-			<!-- #primary -->
-		</div>
-		<!-- #content -->
+		</form>
 	</div>
 	<!-- .container -->
 	<footer id="colophon" class="site-footer">
@@ -257,10 +215,7 @@ var btn = document.getElementById("myBtn");
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
 
-// When the user clicks on the button, open the modal
-btn.onclick = function() {
-  modal.style.display = "block";
-}
+
 
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() {
